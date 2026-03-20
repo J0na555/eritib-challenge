@@ -1,0 +1,2 @@
+- add link instead of images for the maps 
+- 
