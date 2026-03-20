@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Map</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="forest.css">
+</head>
+<body>
+    <header class="forest-header">
+        <h1>Forest</h1>
+        <p class="forest-lede">The forest is thick with towering trees. Light barely reaches the ground, and every direction looks the same, except for what you mark on the map.</p>
+        <a class="nav-world" href="../index.html">← World map</a>
+    </header>
+
+    <div class="forest-map" role="img" aria-label="Illustrated map of the forest with points of interest">
+        <a href="deep_forest.html" class="card spot-deep">
+            <span class="card-frame" aria-hidden="true"></span>
+            <span class="card-label">Deeper woods</span>
+        </a>
+
+        <div class="card spot-look is-toggle">
+            <input type="checkbox" id="search1" class="sr-only">
+            <label for="search1" class="card-hit">
+                <span class="card-frame" aria-hidden="true"></span>
+                <span class="card-label">Look around</span>
+            </label>
+            <div class="discovery" role="status">
+                You notice strange carvings on a tree…
+            </div>
+        </div>
+
+        <div class="card spot-roots is-toggle">
+            <input type="checkbox" id="search2" class="sr-only">
+            <label for="search2" class="card-hit">
+                <span class="card-frame" aria-hidden="true"></span>
+                <span class="card-label">Inspect the roots</span>
+            </label>
+            <div class="discovery" role="status">
+                Something was buried here long ago…
+            </div>
+        </div>
+    </div>
+</body>
+</html>

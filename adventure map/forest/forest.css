@@ -1,0 +1,186 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    url("https://www.transparenttextures.com/patterns/old-map.png"),
+    #0f172a;
+  font-family: serif;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.forest-header {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 0.75rem;
+  text-align: center;
+}
+
+.forest-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.forest-lede {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  opacity: 0.85;
+}
+
+.nav-world {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: rgba(248, 202, 202, 0.75);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-world:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.55);
+}
+.forest-map {
+  position: relative;
+  width: min(920px, calc(100% - 2rem));
+  height: min(68vh, 520px);
+  margin: 0.5rem auto 1.5rem;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.28);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.35) inset,
+    0 16px 40px rgba(0, 0, 0, 0.45);
+  background-color: #0b1220;
+  background-image: url("https://as1.ftcdn.net/v2/jpg/10/17/57/70/1000_F_1017577002_6HJpXojwzBXsrWtOZlmLU2FnfxfmQxcL.jpg");
+  background-size: cover;
+  background-position: center 40%;
+  overflow: hidden;
+}
+
+.forest-map::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 85% 75% at 50% 45%,
+    rgba(0, 0, 0, 0) 35%,
+    rgba(15, 23, 42, 0.55) 100%
+  );
+}
+
+.card {
+  position: absolute;
+  z-index: 1;
+  width: 140px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.card-frame {
+  display: block;
+  width: 100%;
+  height: 100px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(2px);
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+a.card:hover .card-frame,
+.card-hit:hover .card-frame {
+  transform: scale(1.08);
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+}
+
+.card-label {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85);
+}
+
+a.card:hover .card-label,
+.card-hit:hover .card-label,
+#search1:checked + .card-hit .card-label,
+#search2:checked + .card-hit .card-label {
+  opacity: 1;
+}
+
+.spot-deep {
+  top: 18%;
+  left: 62%;
+}
+
+.spot-look {
+  top: 42%;
+  left: 22%;
+}
+
+.spot-roots {
+  top: 58%;
+  left: 48%;
+}
+.is-toggle {
+  cursor: pointer;
+}
+
+.card-hit {
+  display: block;
+  cursor: pointer;
+  margin: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.discovery {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 12px);
+  transform: translateX(-50%) translateY(4px);
+  width: min(260px, 70vw);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(15, 23, 42, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  z-index: 2;
+}
+
+#search1:checked ~ .discovery,
+#search2:checked ~ .discovery {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+.card-hit:focus-visible .card-frame {
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 3px;
+}
